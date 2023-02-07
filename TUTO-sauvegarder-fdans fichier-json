@@ -1,0 +1,26 @@
+Installez fs avec npm :
+Copy code
+npm install fs
+Importez fs en haut de votre fichier :
+python
+Copy code
+import * as fs from 'fs';
+Créez une fonction qui sauvegardera les informations dans un fichier JSON. Vous pouvez appeler cette fonction juste après le clic sur le bouton :
+javascript
+Copy code
+const handleButtonClick = () => {
+  // ...
+  saveToFile();
+}
+
+const saveToFile = () => {
+  const data = {
+    taches,
+    dates,
+    results
+  };
+  fs.writeFileSync('todo.json', JSON.stringify(data), 'utf-8');
+};
+Maintenant, lorsque vous cliquez sur le bouton, les informations seront sauvegardées dans un fichier JSON nommé todo.json dans le même répertoire que votre fichier. Vous pouvez utiliser un autre nom de fichier si vous le souhaitez.
+
+Il est important de noter que la fonction writeFileSync est bloquante, ce qui signifie qu'elle arrêtera tout le processus jusqu'à ce que la sauvegarde soit terminée. Il existe une version non bloquante de la fonction writeFile si vous avez besoin d'une solution plus efficace.
